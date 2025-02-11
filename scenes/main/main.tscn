@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dta2xhjwq0yjf"]
+
+[ext_resource type="PackedScene" uid="uid://b662ajc38tqdg" path="res://scenes/player/player.tscn" id="1_66mg0"]
+[ext_resource type="PackedScene" uid="uid://jw864p7mv7bn" path="res://scenes/background/background.tscn" id="1_7006b"]
+[ext_resource type="PackedScene" uid="uid://34rku6ixi07b" path="res://scenes/spawner/spawner.tscn" id="2_csgk3"]
+[ext_resource type="PackedScene" uid="uid://cgnjonahcg2ka" path="res://scenes/hud/hud.tscn" id="3_rqwd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8cx3"]
+size = Vector2(360, 20)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_7006b")]
+
+[node name="Spawner" parent="." instance=ExtResource("2_csgk3")]
+
+[node name="Player" parent="." instance=ExtResource("1_66mg0")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(180, 526)
+shape = SubResource("RectangleShape2D_x8cx3")
+
+[node name="HUD" parent="." instance=ExtResource("3_rqwd7")]

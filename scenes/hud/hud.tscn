@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgnjonahcg2ka"]
+
+[ext_resource type="Texture2D" uid="uid://d68b77dmo5ot" path="res://scenes/hud/turn.png" id="1_02ijj"]
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_8bmx3"]
+[ext_resource type="FontFile" uid="uid://caa3dhty0tuhk" path="res://fonts/NeoDunggeunmoPro-Regular.ttf" id="1_mm6u4"]
+[ext_resource type="Texture2D" uid="uid://cphycx35onpdq" path="res://scenes/hud/up.png" id="2_qukcq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_whcn2"]
+font = ExtResource("1_mm6u4")
+font_size = 72
+font_color = Color(0.137255, 0.133333, 0.156863, 1)
+outline_size = 12
+outline_color = Color(0.721569, 0.690196, 0.584314, 1)
+shadow_size = 12
+shadow_color = Color(0.721569, 0.690196, 0.584314, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xpgek"]
+font = ExtResource("1_mm6u4")
+font_size = 32
+font_color = Color(0.137255, 0.133333, 0.156863, 1)
+outline_size = 6
+outline_color = Color(0.901961, 0.572549, 0.541176, 1)
+shadow_size = 6
+shadow_color = Color(0.901961, 0.572549, 0.541176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdc6w"]
+font = ExtResource("1_mm6u4")
+font_size = 80
+font_color = Color(0.776471, 0.313726, 0.27451, 1)
+outline_size = 12
+outline_color = Color(0.921569, 0.92549, 0.862745, 1)
+shadow_size = 12
+shadow_color = Color(0.921569, 0.92549, 0.862745, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6s30t"]
+font = ExtResource("1_mm6u4")
+font_size = 80
+font_color = Color(0.921569, 0.92549, 0.862745, 1)
+outline_size = 12
+outline_color = Color(0.458824, 0.301961, 0.270588, 1)
+shadow_size = 12
+shadow_color = Color(0.458824, 0.301961, 0.270588, 1)
+shadow_offset = Vector2(3, 3)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8bmx3")
+
+[node name="GameOverVBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -54.0
+offset_right = 167.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverVBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_whcn2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel2" type="Label" parent="GameOverVBoxContainer"]
+layout_mode = 2
+text = "Press SPACE to RESTART"
+label_settings = SubResource("LabelSettings_xpgek")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 80.0
+offset_bottom = 120.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+
+[node name="BestScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_qdc6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_6s30t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_top = -184.0
+offset_right = 138.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_02ijj")
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_qukcq")

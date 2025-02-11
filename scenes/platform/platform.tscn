@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://drd4g5rx1prhi"]
+
+[ext_resource type="Texture2D" uid="uid://7gcos1fdtdhy" path="res://sprites/monochrome_tilemap_transparent_packed_resized.png" id="1_6t7hy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttyu0"]
+atlas = ExtResource("1_6t7hy")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1flfk"]
+size = Vector2(16, 8)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ttyu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_1flfk")
